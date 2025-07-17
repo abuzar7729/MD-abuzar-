@@ -1,0 +1,87 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Bangladesh color palette + vibrant style */
+:root {
+  --green: #006a4e;
+  --red: #f42a41;
+  --yellow: #f9c80e;
+  --sky: #00bcd4;
+  --white: #ffffff;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, var(--white), var(--green), var(--white));
+  color: var(--green);
+  padding: 2rem;
+}
+
+/* Title */
+.gallery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px var(--yellow);
+}
+
+/* Gallery Grid */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 5px solid var(--sky);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Back Button */
+.back-button {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: var(--sky);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--red);
+}
+
+/* Flag background decoration */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at center, var(--red) 10%, transparent 11%);
+  background-size: 100px 100px;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.05;
+  pointer-events: none;
+}
